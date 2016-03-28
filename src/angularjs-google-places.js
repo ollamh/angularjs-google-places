@@ -101,7 +101,7 @@ provider('ngGPlacesAPI', function () {
 
     this.setDefaults = function (args, remove_keys) {
         angular.extend(defaults, args);
-        for (param in remove_keys) {
+        for (var param in remove_keys) {
             delete defaults[param];
         }
     };
