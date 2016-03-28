@@ -99,8 +99,11 @@ provider('ngGPlacesAPI', function () {
 
     this.$get.$inject = ['$q', 'gMaps', 'gPlaces', '$window'];
 
-    this.setDefaults = function (args) {
+    this.setDefaults = function (args, remove_keys) {
         angular.extend(defaults, args);
+        for (param in remove_keys) {
+            delete defaults[param];
+        }
     };
 
 });
